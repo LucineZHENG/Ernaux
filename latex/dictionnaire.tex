@@ -1,0 +1,137 @@
+\RequirePackage{etex}
+\documentclass[12pt,a4paper]{report}
+
+% Packages de base
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage[french]{babel}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{csquotes} 
+\usepackage{tocbibind} % Pour inclure la bibliographie dans la table des matières
+\usepackage{svg}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{pgfmath} 
+\usepackage{etex} % Étend la capacité mémoire de LaTeX
+\usepackage{pgfplotstable} %Pour les celules dynamyques dans un tableau
+\usepackage{tabularray} % Pour tableau plus dynamyque
+\pgfplotsset{compat=1.18}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\onehalfspacing
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[hang]
+  {\normalfont\huge\bfseries} 
+  {\thechapter.}              
+  {1em}                      
+  {\Huge}
+
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{0pt}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{0pt}}{}{}
+\makeatother
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\onehalfspacing
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{}{0pt}{\Huge}
+
+\titleformat{\chapter}[hang]
+  {\normalfont\huge\bfseries} 
+  {\thechapter.}              
+  {1em}                      
+  {\Huge}                    
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \includegraphics[width=0.4\textwidth]{logoSorbonne.png}\par
+    \vspace{1cm}
+    
+    {\scshape\LARGE Sorbonne Université \par}
+    \vspace{1.5cm}
+    
+    {\scshape\Large Sciences du Langage\par}
+    \vspace{0.5cm}
+    
+    {\scshape\Large Langue et Informatique\par}
+    \vspace{1.5cm}
+    
+    {\huge\bfseries Annie Ernaux et l'écriture plate\par}
+
+    \vspace{0.5cm}
+    {\Large Une modélisation simple à partir d’analyses lexicales, syntaxiques et rhétoriques\par}
+    \vspace{2cm}
+    
+    {\Large Présenté par : Ruixing ZHENG\par}
+    \vspace{0.5cm}
+    
+    {\large Sous la direction de :  
+    Gaël LEJEUNE\par}
+    \vfill
+    
+    {\Large Soutenu le 15/05 2025\par}
+\end{titlepage}
+
+
+
+
+
+
+% Table des Matières
+\tableofcontents
+\newpage
+
+%Introduction
+\chapter{Introduction}
+\input{01_Introduction}
+%Etat de l'art
+\chapter{Etat de l'art}
+\label{chap:Etat_de_l'art}
+\input{02_Etat_de_l'art}
+%Méthodologie
+\chapter{Méthodologie} \label{chap:Méthodologie}
+\input{03_Méthodologie}
+
+%Résultats
+\chapter{Résultats}
+\label{chap:Résultats}
+\input{04_Résultats}
+
+%Analyse et discussion
+\chapter{Analyse et discussion}
+\label{chap:Analyse_et_discussion}
+\input{05_Analyse_et_discussion}
+% Conclusion
+\chapter{Conclusion et perspectives}
+\label{chap:Conclusion_et_perspectives}
+\input{06_Conclusion_et_perspectives}
+
+
+
+%Bibliographie
+\bibliographystyle{apalike}
+\bibliography{bibliograhie}
+ 
+
+\end{document}
